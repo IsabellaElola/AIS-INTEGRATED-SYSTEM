@@ -13,7 +13,7 @@ export const getUser = async (id) => {
 }
 
 
-export const createUser = async (email, password) => {
+export const createUser = async (userProfile, email, password) => {
     if (email === ''){
         throw new Error ('Invalid email');
     }
@@ -37,6 +37,16 @@ export const createUser = async (email, password) => {
 
     const salt = bcrypt.genSaltSync(10);
     const newPassword = bcrypt.hashSync(password,salt);
+    console.log(userProfile);
+    const response = await fetch(
+        `https://ais-simulated-legacy.onrender.com/api/students`, {
+            method: 'POST',
+            headers: {'Content-Type' : 'application/json'},
+
+        body: JSON.stringify(userProfile)
+    });
+    
+    const result = await response.json();
 
     const [newUser] = await pool.query(
         "Insert INTO tbluser(email, password) VALUES(?,?)",
