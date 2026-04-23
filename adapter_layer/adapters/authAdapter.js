@@ -9,7 +9,7 @@ export const create = async (profile) => {
     console.log(transformedProfile);
 
     const response = await fetch(
-        "https://ais-simulated-legacy.onrender.com/api/register",
+        "https://ais-simulated-legacy.onrender.com/api/students",
         {
             method: "POST",
             headers: { "Content-Type": "application/json" },
