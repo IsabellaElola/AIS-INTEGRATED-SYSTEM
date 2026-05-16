@@ -1,6 +1,7 @@
 export const create = async (profile) => {
     const transformedProfile = {
         name: profile.firstName + " " + profile.lastName,
+<<<<<<< HEAD
         email: profile.email,
         birthdate: profile.dob,
         program: profile.course + " " + profile.major,
@@ -47,4 +48,23 @@ export const findById = async (studentId) => {
     address: data.address,
     studentStatus: data.studentStatus
   };
+=======
+        birthdate: profile.dob,
+        program: profile.course + " " + profile.major,
+        address: profile.address,
+        studentStatus: profile.status,
+    };
+    console.log(transformedProfile);
+
+    const response = await fetch(
+        "https://ais-simulated-legacy.onrender.com/api/students",
+        {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(transformedProfile)
+        }
+    );
+
+    return await response.json();
+>>>>>>> 2164a97ce9d0689cf788be7f63fdb2d6fd54ff7f
 };

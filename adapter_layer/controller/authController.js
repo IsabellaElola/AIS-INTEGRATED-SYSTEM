@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import * as AuthService from '../service/authService.js';
+=======
+import * as AuthService from '../services/authService.js';
+>>>>>>> 2164a97ce9d0689cf788be7f63fdb2d6fd54ff7f
 
 export const registerStudent = async (req, res) => {
     const { firstName, lastName, dob, course, major, address, status } = req.body;
@@ -25,6 +29,7 @@ export const registerStudent = async (req, res) => {
         console.error("Error in register controller:", error);
 
     }
+<<<<<<< HEAD
 };
 
 export const getStudentProfile = async (req, res) => {
@@ -52,4 +57,6 @@ export const getStudentProfile = async (req, res) => {
       message: err.message
     });
   }
+=======
+>>>>>>> 2164a97ce9d0689cf788be7f63fdb2d6fd54ff7f
 };
