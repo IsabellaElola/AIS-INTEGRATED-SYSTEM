@@ -1,0 +1,25 @@
+{
+  "name": "ais-integrated-systems",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "auth": "cd Auth_System && npm run dev",
+    "adapter": "cd Adapter_Layer && npm run dev",
+    "Student_Portal": "cd Student_Portal && npm run dev",
+    "dev": "concurrently npm:auth npm:adapter npm:Student_Portal"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Angelo0960/AIS-INTEGRATED-SYSTEMS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Angelo0960/AIS-INTEGRATED-SYSTEMS/issues"
+  },
+  "homepage": "https://github.com/Angelo0960/AIS-INTEGRATED-SYSTEMS#readme"
+}
